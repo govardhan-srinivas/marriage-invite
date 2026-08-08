@@ -248,14 +248,21 @@
         tryPlay();
         window.addEventListener('load', tryPlay, { once: true });
 
-        // ...then unmute on the first interaction, so real sound starts as early as possible
+        // ...then unmute on the first interaction, so real sound starts as early as possible.
+        // wheel/scroll don't always count as a "user gesture" for autoplay, so play() can
+        // silently reject on the first one — keep listening until it actually starts playing.
+        var unmuteEvents = ['click', 'touchstart', 'touchend', 'keydown', 'wheel', 'scroll'];
         var unmute = function () {
           music.muted = false;
-          tryPlay();
+          music.play().then(function () {
+            unmuteEvents.forEach(function (evt) {
+              document.removeEventListener(evt, unmute, { capture: true });
+            });
+          }).catch(function () { });
         };
         window.unmuteBgMusic = unmute;
-        ['click', 'touchstart', 'keydown', 'wheel', 'scroll'].forEach(function (evt) {
-          document.addEventListener(evt, unmute, { once: true, passive: true, capture: true });
+        unmuteEvents.forEach(function (evt) {
+          document.addEventListener(evt, unmute, { passive: true, capture: true });
         });
       }
 
