@@ -9,10 +9,9 @@ const CONFIG = {
 
 // Swap `photo` from null to an assets/images/... path once real photos are ready.
 const GALLERY_ITEMS = [
-  { caption: "Where it began", photo: null },
-  { caption: "First trip together", photo: null },
-  { caption: "Meeting the families", photo: null },
-  { caption: "The proposal", photo: null }
+  { caption: "Where it began", photo: "assets/images/gallery/start.jpeg" },
+  { caption: "First trip together", photo: "assets/images/gallery/first_trip.jpeg" },
+  { caption: "The proposal", photo: "assets/images/gallery/proposal.jpeg" }
 ];
 
 // ---- Calendar build ----
