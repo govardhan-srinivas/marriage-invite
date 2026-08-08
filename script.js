@@ -11,7 +11,10 @@ const CONFIG = {
 const GALLERY_ITEMS = [
   { caption: "Where it began", photo: "assets/images/gallery/start.jpeg" },
   { caption: "First trip together", photo: "assets/images/gallery/first_trip.jpeg" },
-  { caption: "The proposal", photo: "assets/images/gallery/proposal.jpeg" }
+  { caption: "The proposal", photo: "assets/images/gallery/proposal.jpeg" },
+  { caption: "The engagement", photo: "assets/images/gallery/enagagment_rings.jpeg" },
+  { caption: "Is it really ***?", photo: "assets/images/gallery/wedding.jpeg" },
+  { caption: "Wedding invitation", photo: "assets/images/gallery/wedding_invitation.jpeg" }
 ];
 
 // ---- Calendar build ----

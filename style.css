@@ -774,10 +774,13 @@ body.loading #fullpage {
 }
 
 .gallery-item-caption {
-  color: var(--olive);
+  color: var(--ink);
   font-size: 15px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
   font-family: 'Gabriela';
+  background: rgba(255, 255, 255, .75);
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 @media (max-width:520px) {
