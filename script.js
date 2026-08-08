@@ -13,7 +13,7 @@ const GALLERY_ITEMS = [
   { caption: "First trip together", photo: "assets/images/gallery/first_trip.jpeg" },
   { caption: "The proposal", photo: "assets/images/gallery/proposal.jpeg" },
   { caption: "The engagement", photo: "assets/images/gallery/enagagment_rings.jpeg" },
-  { caption: "Is it really ***?", photo: "assets/images/gallery/wedding.jpeg" },
+  { caption: "It's happening", photo: "assets/images/gallery/wedding.jpeg" },
   { caption: "Wedding invitation", photo: "assets/images/gallery/wedding_invitation.jpeg" }
 ];
 
