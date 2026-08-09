@@ -97,7 +97,6 @@ function buildGallery() {
   GALLERY_ITEMS.forEach((item, i) => {
     const el = document.createElement("div");
     el.className = "gallery-item";
-    el.style.setProperty("--tilt", (i % 2 === 0 ? 1.5 : -1.5) + "deg");
     if (item.photo) el.style.backgroundImage = `url('${item.photo}')`;
     const caption = document.createElement("span");
     caption.className = "gallery-item-caption";
@@ -105,8 +104,24 @@ function buildGallery() {
     el.appendChild(caption);
     gallery.appendChild(el);
   });
+  observeGalleryCenter(gallery);
 }
 buildGallery();
+
+// Highlights whichever gallery item is centered in the scroll viewport,
+// so touch users get a "hover-like" pop as they swipe (no CSS :hover on touch).
+function observeGalleryCenter(gallery) {
+  const items = gallery.querySelectorAll(".gallery-item");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-centered", entry.intersectionRatio > 0.6);
+      });
+    },
+    { root: gallery, threshold: [0, 0.6, 1] }
+  );
+  items.forEach((item) => observer.observe(item));
+}
 
 // ---- Share button ----
 const shareBtn = document.getElementById("share-btn");
