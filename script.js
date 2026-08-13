@@ -4,7 +4,7 @@ const CONFIG = {
   daysInMonth: 31,
   startWeekday: 6, // Aug 1 2026 is a Saturday (0 = Sun)
   highlightDays: [26],
-  weddingDate: new Date("2026-08-26T00:00:00")
+  weddingDate: new Date("2026-08-26T09:00:00")
 };
 
 // Swap `photo` from null to an assets/images/... path once real photos are ready.
